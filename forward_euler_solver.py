@@ -113,7 +113,7 @@ if __name__ == "__main__":
     plt.loglog(h_values, error_values, marker = 'o')
     plt.xlabel('Step sizes')
     plt.ylabel("Maximum Absolute Error")
-    plt.title('Log-log of Max Absolute Value vs Step Size')
+    plt.title('Log-log of Max Absolute Error vs Step Size')
 
     plt.show()
 
