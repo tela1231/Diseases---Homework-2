@@ -60,12 +60,16 @@ def E(h):
     tn = 25
     I0 = 0.01
 
-
     forward_values = forward_euler(S_dot, I_dot, S0, I0, t0, tn, h)
     t_values, S_values, I_values = forward_values
 
+    error_values = []
 
-    max_error = abs(I_values[-1] - I(tn,I0)) * tn
+    for i in range(len(t_values)):
+        abs_error = abs(I_values[i] - I(t_values[i],I0)) 
+        error_values.append(abs_error)
+
+    max_error = max(error_values)
 
 
     return max_error
